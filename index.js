@@ -15,7 +15,6 @@ async function installDocker() {
   await exeq(
     'echo Installing docker...',
     'sudo apt-get update',
-    'sudo apt-get upgrade -y',
     'sudo apt-get install docker.io -y',
     'sudo systemctl unmask docker',
     'sudo systemctl start docker'
@@ -26,6 +25,8 @@ async function installDocker() {
 async function installServerlessAndPlugins() {
   await exeq(
     'echo Installing Serverless and plugins...',
+    'pwd',
+    'ls -la'
     'cd geo-api/',
     'sudo npm i serverless -g',
     'sudo npm i serverless-python-requirements',
@@ -38,7 +39,9 @@ async function installServerlessAndPlugins() {
 async function runServerlessDeploy() {
   await exeq(
     `echo Running sudo sls deploy ${ARGS}...`,
-    `pwd`,
+    'pwd',
+    'ls -la'
+    'cd geo-api/',
     `sudo sls config credentials --provider aws --key ${AWS_ACCESS_KEY_ID} --secret ${AWS_SECRET_ACCESS_KEY} ${ARGS}`,
     `sudo sls deploy ${ARGS}`
   )
