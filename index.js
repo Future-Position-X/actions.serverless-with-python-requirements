@@ -8,7 +8,7 @@ var exeq = require('exeq')
 var ARGS = core.getInput('args')
 var AWS_ACCESS_KEY_ID = core.getInput('aws-access-key-id')
 var AWS_SECRET_ACCESS_KEY = core.getInput('aws-secret-access-key')
-
+var DATABASE_URI = core.getInput('database-uri')
 
 //  Reinstalls Docker on Ubuntu
 async function installDocker() {
