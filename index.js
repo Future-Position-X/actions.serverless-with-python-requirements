@@ -14,6 +14,8 @@ var AWS_SECRET_ACCESS_KEY = core.getInput('aws-secret-access-key')
 async function installDocker() {
   await exeq(
     'echo Installing docker...',
+    'sudo apt-get update',
+    'sudo apt-get upgrade -y',
     'sudo apt-get install docker.io -y',
     'sudo systemctl unmask docker',
     'sudo systemctl start docker'
