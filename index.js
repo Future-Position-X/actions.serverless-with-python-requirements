@@ -24,6 +24,7 @@ async function installDocker() {
 async function installServerlessAndPlugins() {
   await exeq(
     'echo Installing Serverless and plugins...',
+    'cd geo-api/',
     'sudo npm i serverless -g',
     'sudo npm i serverless-python-requirements',
     'sudo npm i serverless-plugin-canary-deployments'
