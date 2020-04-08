@@ -42,7 +42,7 @@ async function runServerlessDeploy() {
     'pwd',
     'ls -la',
     'cd geo-api/',
-    `export DATABASE_URI=${DATABASE_URI}`
+    `export DATABASE_URI=${DATABASE_URI}`,
     `sudo sls config credentials --provider aws --key ${AWS_ACCESS_KEY_ID} --secret ${AWS_SECRET_ACCESS_KEY} ${ARGS}`,
     `sudo sls deploy ${ARGS}`
   )
